@@ -13,7 +13,7 @@ app.use(cors());
 
 //checkout api
 
-app.post("/api/create-checkout-session", async (req, res) => {
+app.post("https://kabhi.onrender.com/api/create-checkout-session", async (req, res) => {
   const { products } = req.body;
   console.log(products);
 
