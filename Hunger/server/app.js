@@ -3,16 +3,25 @@ const app = express();
 require('dotenv').config
 
 const cors = require("cors");
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 
 const port = process.env.PORT
+
+// const stripe = require("stripe")(
+//   "sk_test_51Q7HaaHJe8uQrcicppvzG39N3EupZACIbJWhpKdcBuvutsLy5mi0dGyKjMvioFBZ3RQHKy7cojBQEZfUFHUmJmAj00AcsLri48"
+// );
+// const port="https://kabhi.onrender.com";
+// const port = 7000;
+// const port = process.env.PORT || 7000
+
 app.use(express.json());
 app.use(cors());
 
 //checkout api
 
-app.post("/api/create-checkout-session", async (req, res) => {
+app.post("https://kabhi.onrender.com/api/create-checkout-session", async (req, res) => {
   const { products } = req.body;
   console.log(products);
 
