@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
+require('dotenv').config
 
 const cors = require("cors");
-const stripe = require("stripe")(
-  "sk_test_51Q7HaaHJe8uQrcicppvzG39N3EupZACIbJWhpKdcBuvutsLy5mi0dGyKjMvioFBZ3RQHKy7cojBQEZfUFHUmJmAj00AcsLri48"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const port = 7000;
-// const port = process.env.PORT || 7000
+
+const port = process.env.PORT
 app.use(express.json());
 app.use(cors());
 
@@ -32,8 +31,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "http://localhost:5173/success",
-    cancel_url: "http://localhost:5173/cancel",
+    success_url: "https://kabhi.onrender.com",
+    cancel_url: "https://kabhi.onrender.com",
   });
   res.json({ id: session.id });
 });
