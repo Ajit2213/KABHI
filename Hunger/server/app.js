@@ -31,7 +31,7 @@ const stripe = require("stripe")(
 
 //checkout api
 
-app.post("https://kabhi.onrender.com/api/create-checkout-session", async (req, res) => {
+app.post("/api/create-checkout-session", async (req, res) => {
   const { products } = req.body;
   console.log(products);
 
@@ -50,8 +50,8 @@ app.post("https://kabhi.onrender.com/api/create-checkout-session", async (req, r
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://wondrous-halva-25e4ba.netlify.app",
-    cancel_url: "https://wondrous-halva-25e4ba.netlify.app",
+    success_url: "https://wondrous-halva-25e4ba.netlify.app/success",
+    cancel_url: "https://wondrous-halva-25e4ba.netlify.app/cancel",
   });
   res.json({ id: session.id });
 });
