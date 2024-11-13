@@ -50,8 +50,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://kabhi.onrender.com/success",,
-    cancel_url: "https://kabhi.onrender.com/cancel",,
+    success_url: "https://wondrous-halva-25e4ba.netlify.app",,
+    cancel_url: "https://wondrous-halva-25e4ba.netlify.app",,
   });
   res.json({ id: session.id });
 });
