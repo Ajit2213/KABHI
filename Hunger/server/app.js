@@ -61,7 +61,7 @@ app.get("/success", (req, res) => {
 }); 
 // Handle GET request for /cancel
 app.get("/cancel", (req, res) => {
-  res.send("payment not succesful");
+res.redirect('https://wondrous-halva-25e4ba.netlify.app/success');
 });
 
 app.listen(port, () => {
