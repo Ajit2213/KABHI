@@ -4,7 +4,7 @@ require('dotenv').config
 const cors = require("cors");
 
 const corsOptions = { 
-  origin: "https:////kabhi.onrender.com", 
+  origin: "https://wondrous-halva-25e4ba.netlify.app", 
   optionsSuccessStatus: 200 
 }; 
 app.use(express.json()); 
@@ -50,8 +50,8 @@ app.post("https://kabhi.onrender.com/api/create-checkout-session", async (req, r
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://kabhi.onrender.com",
-    cancel_url: "https://kabhi.onrender.com",
+    success_url: "https://wondrous-halva-25e4ba.netlify.app",
+    cancel_url: "https://wondrous-halva-25e4ba.netlify.app",
   });
   res.json({ id: session.id });
 });
