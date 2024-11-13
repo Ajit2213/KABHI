@@ -57,11 +57,11 @@ app.post("/api/create-checkout-session", async (req, res) => {
 });
 // Handle GET request for /success
 app.get("/success", (req, res) => { 
-  res.redirect('https://wondrous-halva-25e4ba.netlify.app/success');
+  res.send("payment successful");
 }); 
 // Handle GET request for /cancel
 app.get("/cancel", (req, res) => {
-  res.redirect('https://wondrous-halva-25e4ba.netlify.app/cancel');
+  res.send("payment not succesful");
 });
 
 app.listen(port, () => {
