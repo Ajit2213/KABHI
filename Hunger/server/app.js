@@ -55,6 +55,14 @@ app.post("/api/create-checkout-session", async (req, res) => {
   });
   res.json({ id: session.id });
 });
+// Handle GET request for /success
+app.get("/success", (req, res) => { 
+  res.redirect('https://wondrous-halva-25e4ba.netlify.app/success');
+}); 
+// Handle GET request for /cancel
+app.get("/cancel", (req, res) => {
+  res.redirect('https://wondrous-halva-25e4ba.netlify.app/cancel');
+});
 
 app.listen(port, () => {
   console.log("its listing");
