@@ -50,19 +50,19 @@ app.post("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://wondrous-halva-25e4ba.netlify.app/success",
-    cancel_url: "https://wondrous-halva-25e4ba.netlify.app/cancel",
+    success_url: "https://kabhi.onrender.com/success",,
+    cancel_url: "https://kabhi.onrender.com/cancel",,
   });
   res.json({ id: session.id });
 });
 // Handle GET request for /success
-// app.get("/success", (req, res) => { 
-//   res.send("payment successful");
-// }); 
+app.get("/success", (req, res) => { 
+  res.send("payment successful");
+}); 
 // Handle GET request for /cancel
-// app.get("/cancel", (req, res) => {
-// res.redirect('https://wondrous-halva-25e4ba.netlify.app/success');
-// });
+app.get("/cancel", (req, res) => {
+res.send("payment not successfully placed")
+});
 
 app.listen(port, () => {
   console.log("its listing");
