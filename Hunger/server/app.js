@@ -1,8 +1,18 @@
 const express = require("express");
 const app = express();
 require('dotenv').config
-
 const cors = require("cors");
+
+const corsOptions = { 
+  origin: "https:////kabhi.onrender.com", 
+  optionsSuccessStatus: 200 
+}; 
+app.use(express.json()); 
+app.use(cors(corsOptions));
+
+
+
+
 
 // const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -16,8 +26,8 @@ const stripe = require("stripe")(
 // const port = 7000;
 // const port = process.env.PORT || 7000
 
-app.use(express.json());
-app.use(cors());
+// app.use(express.json());
+// app.use(cors());
 
 //checkout api
 
